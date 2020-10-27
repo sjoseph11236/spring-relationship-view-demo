@@ -21,11 +21,22 @@ public class Runner implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         Address address = new Address("123 Phillip Street");
+//        address.setLibrary(new Library("Brooklyn Public Library"));
         addressRepo.save(address);
+
+        Address otherAddress = new Address("Main St");
+//        otherAddress.setLibrary(new Library("Hartford Public Library"));
+        addressRepo.save(otherAddress);
+
 
         Library library = new Library("Brooklyn Public Library");
         library.setAddress(address);
         libraryRepo.save(library);
-    }
 
+        Library otherLibrary = new Library("Hartford Public Library");
+        otherLibrary.setAddress(otherAddress);
+        libraryRepo.save(otherLibrary);
+
+    }
 }
+
