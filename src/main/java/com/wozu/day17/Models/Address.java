@@ -35,7 +35,18 @@ public class Address {
         return library;
     }
 
+
     public void setLibrary(Library library) {
         this.library = library;
     }
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "id=" + id +
+                ", location='" + location + '\'' +
+//                ", library=" + library +
+                '}';
+    }
+
 }
